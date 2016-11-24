@@ -8,9 +8,10 @@
 
 package com.example;
 
-/**
+/**************************************************************************************************
  * Created by anartzmugika on 24/11/16.
- */
+ * Example to create a java library from Android Studio
+ **************************************************************************************************/
 
 public interface MyClassIF {
     /**
@@ -18,7 +19,7 @@ public interface MyClassIF {
      */
     String sayHello();
 
-    /**
+    /**@param name String to show with personalize hello!!
      * @return print hello with parameter (name)
      */
     String sayHello(String name);
