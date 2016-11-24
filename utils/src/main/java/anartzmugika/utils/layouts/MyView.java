@@ -11,6 +11,8 @@ import java.util.Random;
 
 import anartzmugika.utils.R;
 import anartzmugika.utils.actions.AppInfo;
+import anartzmugika.utils.actions.IntentsManage;
+import anartzmugika.utils.activities.WebViewActivity;
 
 /**
  * Created by anartzmugika on 23/11/16.
@@ -21,7 +23,7 @@ import anartzmugika.utils.actions.AppInfo;
 public class MyView extends LinearLayout {
 
     private TextView titleTextView, descriptionTextView;
-    private Button changeButton, resetButton;
+    private Button changeButton, resetButton, show_servirace_main_pageButton;
     private Context context;
     public MyView(Context context) {
         super(context);
@@ -50,6 +52,7 @@ public class MyView extends LinearLayout {
         descriptionTextView = (TextView) findViewById(R.id.descriptionTextView);
         changeButton = (Button) findViewById(R.id.changeButton);
         resetButton = (Button) findViewById(R.id.resetButton);
+        show_servirace_main_pageButton = (Button) findViewById(R.id.show_servirace_main_pageButton);
         resetButton.setEnabled(false);
     }
 
@@ -69,6 +72,13 @@ public class MyView extends LinearLayout {
             public void onClick(View view) {
                 titleTextView.setText("Test with library!!!");
                 resetButton.setEnabled(false);
+            }
+        });
+
+        show_servirace_main_pageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentsManage.openWebViewIntent(context, WebViewActivity.class, "http://www.servirace.com");
             }
         });
     }
