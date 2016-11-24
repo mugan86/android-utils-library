@@ -12,14 +12,14 @@ public class IntentsManage {
 
     public static void openIntent(Context from_, Class to_)
     {
-        Intent openIntent = new Intent((Context) from_, to_);
-        ((Context)from_).startActivity(openIntent);
+        Intent openIntent = new Intent(from_, to_);
+        (from_).startActivity(openIntent);
     }
 
     public static void openWebViewIntent(Context from_, Class to_, String url)
     {
-        Intent openIntent = new Intent((Context) from_, to_);
+        Intent openIntent = new Intent( from_, to_);
         openIntent.putExtra("url", url);
-        ((Context)from_).startActivity(openIntent);
+        (from_).startActivity(openIntent);
     }
 }
