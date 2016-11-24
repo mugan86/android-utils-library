@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.util.Log;
 
 import anartzmugika.utils.Constants;
+import anartzmugika.utils.Data;
 import anartzmugika.utils.actions.NetworkUtil;
 
 
 /***************************************************************************
- * Created by anartzmugika on 22/6/16.
- *
+ * Created by Anartz Mugika (mugan86@gmail.com) on 22/6/16.
  * Receive change when detect network status change
  ***************************************************************************/
 
@@ -31,15 +31,15 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
 
                 break;
             case Constants.CONNECT_TO_WIFI:
-                //Actions.checkOfflineData(context);
+                Log.e("Receiver ", "connected to internet (WIFI)");// your code when internet lost
                 break;
             default:
                 Log.e("Receiver ", "connected to internet (NO WIFI)");//your code when internet connection come back
                 break;
         }
 
-        /*System.out.println("Last known connection (" + DataManage.getPreference(context, ConstantValues.MOMENT_CONNECTION) + ") replace with "
+        System.out.println("Last known connection (" + Data.getPreference(context, Constants.MOMENT_CONNECTION) + ") replace with "
                 + status);
-        DataManage.setPreference(context, new String [] {ConstantValues.MOMENT_CONNECTION},new String[]{status});*/
+        Data.setPreference(context, new String [] {Constants.MOMENT_CONNECTION},new String[]{status});
     }
 }
