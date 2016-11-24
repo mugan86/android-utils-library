@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 
 /************************************************************
- * Created by anartzmugika on 24/11/16.
+ * Created by Anartz Mugika (mugan86@gmail.com) on 24/11/16.
  ************************************************************/
 
 public class AppInfo {
