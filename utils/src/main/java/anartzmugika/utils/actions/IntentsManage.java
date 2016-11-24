@@ -2,10 +2,6 @@ package anartzmugika.utils.actions;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.View;
-import android.widget.Toast;
-
-import anartzmugika.utils.activities.WebViewActivity;
 
 /**
  * Created by anartzmugika on 24/11/16.
