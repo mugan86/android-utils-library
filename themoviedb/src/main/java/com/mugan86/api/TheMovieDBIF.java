@@ -22,7 +22,19 @@ import java.util.ArrayList;
 
 
 /**
- * @description About API documentation INFO: https://developers.themoviedb.org/3/getting-started/introduction
+ * About API documentation INFO: https://developers.themoviedb.org/3/getting-started/introduction
+ * @author Anartz Muxika
+ *
+ * https://api.themoviedb.org/3/person/popular?api_key=9600ef8b528a214cba2d53c6cdd71708
+ * https://api.themoviedb.org/3/movie/upcoming?api_key=9600ef8b528a214cba2d53c6cdd71708
+ * https://api.themoviedb.org/3/movie/now_playing?api_key=9600ef8b528a214cba2d53c6cdd71708
+ * https://api.themoviedb.org/3/movie/43074?api_key=9600ef8b528a214cba2d53c6cdd71708
+ * https://api.themoviedb.org/3/discover/tv?api_key=9600ef8b528a214cba2d53c6cdd71708
+ * https://api.themoviedb.org/3/discover/tv?api_key=9600ef8b528a214cba2d53c6cdd71708&first_air_date_year=2010
+ * https://api.themoviedb.org/3/discover/tv?api_key=9600ef8b528a214cba2d53c6cdd71708&first_air_date.lte=2007-01-01&first_air_date.gte=2006-09-09
+ */
+/**
+ * About API documentation INFO: https://developers.themoviedb.org/3/getting-started/introduction
  * @author Anartz Muxika
  *
  * https://api.themoviedb.org/3/person/popular?api_key=9600ef8b528a214cba2d53c6cdd71708
@@ -36,15 +48,17 @@ import java.util.ArrayList;
 public interface TheMovieDBIF {
     /**
      * /discover/movie?sort_by=popularity.desc&vote_count.gte=200
-     * @return
+     * @param vote_count: If number positive check greater than else less than. For example: -100 -> vote_count.lte / 100 -> vote_count.gte
+     * @param page_limit -1 OR 1 = 1 / 0 = 1500 (UNLIMITED) / total_pages > 1 => specific total_pages
+     * @return Movies List
      */
-    public ArrayList<Movie> getMostPopularMovies();
+    public ArrayList<Movie> getMostPopularMovies(int vote_count, int page_limit);
 
     /**
      * US Most Kind Popular Movies and with 100 vote_count
      * /discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&vote_count.gte=100
      * @param page_limit -1 OR 1 = 1 / 0 = 1500 (UNLIMITED) / total_pages > 1 => specific total_pages
-     * @return
+     * @return Movies List
      */
     public ArrayList<Movie> getUSCertificateKindMostPopularMovies(int page_limit);
 
@@ -55,16 +69,16 @@ public interface TheMovieDBIF {
      * @param finish_year Get movies finish year (include this year)
      * @param start_page: Minimun specific start_page
      * @param page_limit: -1 OR 1 = 1 / 0 = 1500 (UNLIMITED) / total_pages > 1 => specific total_pages
-     * @return
+     * @return Movies List
      */
 
     public ArrayList<Movie> getReleaseMoviesFromSelectYearRange(int start_year, int finish_year, int start_page, int page_limit);
 
     /**
      * /discover/movie?primary_release_year=2010&sort_by=vote_average.desc&vote_count.gte=100
-     * @param start_year
+     * @param start_year: select first time release year
      * @param page_limit: Page limit to show. If value -1 only parse 1 page (convert page_limit = 2)
-     * @return
+     * @return Movies List
      */
     public ArrayList<Movie> getMostPopularMoviesFromSelectYear(String start_year, int page_limit);
 
@@ -75,7 +89,7 @@ public interface TheMovieDBIF {
      * @param finish_year
      * @param start_page
      * @param page_limit
-     * @return
+     * @return TV Shows List
      */
     public ArrayList<TV> getTVShowReleaseFirtsAirDateBetweenDates(int start_year, int finish_year, int start_page, int page_limit, ArrayList<TV> show);
 
@@ -164,6 +178,10 @@ public interface TheMovieDBIF {
      */
     public void openDownloadDirectoryFilesAndCreateSQLLines (int year, int type);
 
+    /**
+     *
+     * @param io
+     */
     public void openSeriesMoreInfoAndCredits(int io);
 
 
