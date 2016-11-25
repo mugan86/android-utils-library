@@ -32,22 +32,28 @@ import javax.net.ssl.HttpsURLConnection;
  **************************************************************************************************/
 public class Request {
 
+    private boolean https;
+    public void Request() {}
+    public void Request(boolean https)
+    {
+        this.https = https;
+    }
 
+    private void executeStrictModeThreadPolicy()
+    {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
     //request from server with POST
 
     /***************************************************************
      * POST PARAMETERS TO SEND...
      * ************************************************************
-     *   Uri.Builder builder = new Uri.Builder()
-     .appendQueryParameter("device_token", device_token)
-     .appendQueryParameter("email", email)
-     .appendQueryParameter("reason", reason)
-     .appendQueryParameter("comment", comment);
      */
-    public static String getHttpPostAPI(String request_url, Uri.Builder builder) throws IOException {
+    public String getHttpPostAPI(String request_url, Uri.Builder builder) throws IOException {
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+
+        executeStrictModeThreadPolicy();
 
         URL url = new URL(request_url);
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
@@ -91,10 +97,9 @@ public class Request {
 
 
     //Example to set auth token to get request from server
-    public static String getHttpGETAPI (String request_url) throws IOException {
+    public String getHttpGETAPI (String request_url) throws IOException {
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+        executeStrictModeThreadPolicy();
 
         URL url;
         BufferedReader reader = null;
@@ -158,5 +163,4 @@ public class Request {
             }
         }
     }
-
 }
