@@ -8,9 +8,9 @@
 
 package com.mugan86.models;
 
-import java.util.ArrayList;
-import utils.AsciiUtils;
+import com.mugan86.utils.AsciiUtils;
 
+import java.util.ArrayList;
 /**
  *
  * @author anartzmugika
