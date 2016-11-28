@@ -17,13 +17,17 @@ import com.mugan86.models.TV;
 import java.util.ArrayList;
 
 public class TheMovieDB implements TheMovieDBIF{
+
+
     /**
      * /discover/movie?sort_by=popularity.desc&vote_count.gte=200
      *
-     * @return
+     * @param vote_count : If number positive check greater than else less than. For example: -100 -> vote_count.lte / 100 -> vote_count.gte
+     * @param page_limit -1 OR 1 = 1 / 0 = 1500 (UNLIMITED) / total_pages > 1 => specific total_pages
+     * @return Movies List
      */
     @Override
-    public ArrayList<Movie> getMostPopularMovies() {
+    public ArrayList<Movie> getMostPopularMovies(int vote_count, int page_limit) {
         return null;
     }
 
@@ -47,12 +51,14 @@ public class TheMovieDB implements TheMovieDBIF{
      * @param finish_year Get movies finish year (include this year)
      * @param start_page  : Minimun specific start_page
      * @param page_limit  : -1 OR 1 = 1 / 0 = 1500 (UNLIMITED) / total_pages > 1 => specific total_pages
-     * @return
+     * @param movie
+     * @return Movies List
      */
     @Override
-    public ArrayList<Movie> getReleaseMoviesFromSelectYearRange(int start_year, int finish_year, int start_page, int page_limit) {
+    public ArrayList<Movie> getReleaseMoviesFromSelectYearRange(int start_year, int finish_year, int start_page, int page_limit, ArrayList<Movie> movie) {
         return null;
     }
+
 
     /**
      * /discover/movie?primary_release_year=2010&sort_by=vote_average.desc&vote_count.gte=100
@@ -86,10 +92,12 @@ public class TheMovieDB implements TheMovieDBIF{
      * /discover/tv?first_air_date_year=year
      *
      * @param year
-     * @return
+     * @param start_page
+     * @param page_limit
+     * @return TV Shows List
      */
     @Override
-    public ArrayList<TV> getTVShowReleaseFirtsInSpecificYear(String year) {
+    public ArrayList<TV> getTVShowReleaseFirtsInSpecificYear(int year, int start_page, int page_limit) {
         return null;
     }
 
