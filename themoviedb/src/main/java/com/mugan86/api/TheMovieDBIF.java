@@ -20,7 +20,6 @@ import com.mugan86.models.TV;
 
 import java.util.ArrayList;
 
-
 /**
  * About API documentation INFO: https://developers.themoviedb.org/3/getting-started/introduction
  * @author Anartz Muxika
@@ -38,7 +37,7 @@ public interface TheMovieDBIF {
      * /discover/movie?sort_by=popularity.desc&vote_count.gte=200
      * @param vote_count: If number positive check greater than else less than. For example: -100 -> vote_count.lte / 100 -> vote_count.gte
      * @param page_limit -1 OR 1 = 1 / 0 = 1500 (UNLIMITED) / total_pages > 1 => specific total_pages
-     * @return Movies List (eee)
+     * @return Movies List
      */
     public ArrayList<Movie> getMostPopularMovies(int vote_count, int page_limit);
 
