@@ -63,7 +63,7 @@ public class MyView extends LinearLayout {
             public void onClick(View view) {
                 titleTextView.setText("Change: " + new Random().nextInt(100 - 50 + 1) + 50);
                 resetButton.setEnabled(true);
-                AppInfo.goToGooglePlayAppPage(context);
+                //AppInfo.goToGooglePlayAppPage(context);
             }
         });
 
