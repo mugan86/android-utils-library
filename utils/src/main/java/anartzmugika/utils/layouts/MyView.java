@@ -7,24 +7,26 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Random;
 
 import anartzmugika.utils.R;
-import anartzmugika.utils.actions.AppInfo;
 import anartzmugika.utils.actions.IntentsManage;
 import anartzmugika.utils.activities.WebViewActivity;
 
-/**
+/***************************************************************************************************
  * Created by anartzmugika on 23/11/16.
  *
  * Example to manage 'MyView' from MainActivity
- */
+ **************************************************************************************************/
 
 public class MyView extends LinearLayout {
 
     private TextView titleTextView, descriptionTextView;
     private Button changeButton, resetButton, show_servirace_main_pageButton;
     private Context context;
+    private TouchImageView touchImageView;
     public MyView(Context context) {
         super(context);
         initialize(context);
@@ -54,6 +56,9 @@ public class MyView extends LinearLayout {
         resetButton = (Button) findViewById(R.id.resetButton);
         show_servirace_main_pageButton = (Button) findViewById(R.id.show_servirace_main_pageButton);
         resetButton.setEnabled(false);
+        touchImageView = (TouchImageView) findViewById(R.id.touchImageView);
+
+        Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(touchImageView);
     }
 
     private void addActions()
