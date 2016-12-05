@@ -21,4 +21,8 @@ public class Constants {
 
     //Other data
     public static final String EMPTY_VALUE = "";
+
+    //LOCATION
+
+    public static final int REQUEST_TO_LOCALIZATION_DEVICE = 101;
 }
