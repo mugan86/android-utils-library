@@ -32,4 +32,11 @@
         android:id="@+id/show_servirace_main_pageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <ToggleButton
+        android:text="Find Location"
+        android:id="@+id/locationGetStartStopToggleButton"
+        android:textOff="START GET LOCATION"
+        android:textOn="STOP GET LOCATION"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
