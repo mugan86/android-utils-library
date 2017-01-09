@@ -5,9 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-/************************************************************
+import anartzmugika.utils.Constants;
+
+/***************************************************************************************************
  * Created by Anartz Mugika (mugan86@gmail.com) on 24/11/16.
- ************************************************************/
+ *
+ * Open Google Play app page to show app info and offer possibility to user to valorate and comment
+ * app
+ ***************************************************************************************************/
 
 public class AppInfo {
 
@@ -21,10 +26,9 @@ public class AppInfo {
         String pkg_name = getPackageName(context);
         System.out.println("Package name: " + pkg_name);
         try {
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="
-                    + pkg_name)));
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(Constants.GOOGLE_PLAY_MARKET_REFERENCE_WITH_ID, pkg_name))));
         } catch (android.content.ActivityNotFoundException anfe) {
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + pkg_name)));
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(Constants.GOOGLE_PLAY_MAIN_PAGE_WITH_ID, pkg_name))));
         }
         ((Activity)context).overridePendingTransition(0, 0);
 
