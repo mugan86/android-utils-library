@@ -1,16 +1,4 @@
-/*
- * Copyright (c) 2016. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package anartzmugika.utils.http;
-
-/**
- * Created by anartzmugika on 25/11/16.
- */
 
 import android.net.Uri;
 import android.os.StrictMode;
@@ -26,13 +14,16 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 /***************************************************************************************************
- * Created by Anartz on 06/10/2014.
- ***************************************************************************************************
- * Updated by Anartz on 10/03/2016
+ * Created by Anartz on 06/10/2014. Updated by Anartz on 10/03/2016
+ *------------------------------------------------------------------------------------------------
+ * Class to make server request in POST and GET
  **************************************************************************************************/
 public class Request {
 
     private boolean https;
+
+    private static final int READ_TIME_TIME_IN_MS = 20000;
+    private static final int CONNECT_TIME_TIME_IN_MS = 30000;
     public void Request() {}
     public void Request(boolean https)
     {
@@ -57,8 +48,8 @@ public class Request {
 
         URL url = new URL(request_url);
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-        conn.setReadTimeout(20000);
-        conn.setConnectTimeout(30000);
+        conn.setReadTimeout(READ_TIME_TIME_IN_MS);
+        conn.setConnectTimeout(CONNECT_TIME_TIME_IN_MS);
         conn.setUseCaches(true);
         conn.addRequestProperty("Cache-Control", "max-age=1800");
         conn.setRequestMethod("POST");
@@ -122,9 +113,9 @@ public class Request {
             connection.setUseCaches(true);
             connection.addRequestProperty("Cache-Control", "max-age=1800");
 
-            connection.setConnectTimeout(20*1000);
+            connection.setConnectTimeout(READ_TIME_TIME_IN_MS);
             // give it 40 seconds to respond
-            connection.setReadTimeout(40*1000);
+            connection.setReadTimeout(CONNECT_TIME_TIME_IN_MS);
             connection.connect();
 
             System.out.println("Response code: " + connection.getResponseCode());
