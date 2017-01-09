@@ -12,9 +12,12 @@ import android.content.Context;
 
 import anartzmugika.utils.location.LocationReceiver;
 
-/**
- * Created by anartzmugika on 5/12/16.
- */
+/***************************************************************************************************
+ * Created by anartzmugika on 5/12/16. Update: 9/1/2017
+ * ---------------------------------------------------------
+ * Use Location Receiver to get current user location and extends this functions and override
+ * senDataToCurrentActivity to adapt our requirements.
+ **************************************************************************************************/
 
 public class CurrentLocationReceiver extends LocationReceiver {
 
