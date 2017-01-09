@@ -8,11 +8,13 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import anartzmugika.utils.Constants;
+
 public class DateTime {
 
     public static String getCurrentData ()
     {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat(Constants.ONLY_DATA, Locale.ENGLISH);
         Calendar cal = Calendar.getInstance();
         return dateFormat.format(cal.getTime());
 
@@ -26,14 +28,14 @@ public class DateTime {
 
     public static String getCurrentDataTime ()
     {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat(Constants.DATA_AND_TIME);
         Date date = new Date();
         return dateFormat.format(date);
     }
 
     public static String getYesterdayData ()
     {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat(Constants.ONLY_DATA, Locale.ENGLISH);
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DAY_OF_YEAR, -1);
         return dateFormat.format(cal.getTime());
@@ -56,7 +58,7 @@ public class DateTime {
     public static String [] getFirstDayNextYearAndLastDayBeforeYear ()
     {
         String [] datas = new String [2];
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat(Constants.ONLY_DATA, Locale.ENGLISH);
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.YEAR, 1);
         cal.set(Calendar.DAY_OF_MONTH, 1);
@@ -72,7 +74,7 @@ public class DateTime {
 
     public static String getCurrentDataWithAddSetMonthValue (String first_data, int add_month)
     {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat(Constants.ONLY_DATA, Locale.ENGLISH);
         Calendar cal = Calendar.getInstance();
         if (!first_data.equals("")) //add first_data in calendar object to correct asign in second data
         {
@@ -90,7 +92,7 @@ public class DateTime {
 
     public static String getCurrentDataWithAddSetBeforeDays (String first_data, int add_month)
     {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat(Constants.ONLY_DATA, Locale.ENGLISH);
         Calendar cal = Calendar.getInstance();
         if (!first_data.equals("")) //add first_data in calendar object to correct asign in second data
         {
@@ -122,7 +124,7 @@ public class DateTime {
 
     public static String getCurrentTime()
     {
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat(Constants.ONLY_HOUR_WITHOUT_SECONDS);
         //get current date time with Date()
         Date date = new Date();
         return dateFormat.format(date);
@@ -204,7 +206,7 @@ public class DateTime {
         System.out.println("**********************************************");
 
         //Parse date in UTC
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATA_AND_TIME);
         formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date value = null;
         try {
@@ -214,7 +216,7 @@ public class DateTime {
         }
 
         //Convert UTC datetime in our timezone
-        String format_data = "yyyy-MM-dd";
+        String format_data = Constants.ONLY_DATA;
         if (with_hour) format_data = "yyyy-MM-dd HH:mm";
         SimpleDateFormat dateFormatter = new SimpleDateFormat(format_data); //this format changeable
         dateFormatter.setTimeZone(TimeZone.getDefault());
@@ -237,7 +239,7 @@ public class DateTime {
     {
 
         //Get curren data time
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat(Constants.DATA_AND_TIME);
         Date date = new Date();
         String current = dateFormat.format(date);
 
