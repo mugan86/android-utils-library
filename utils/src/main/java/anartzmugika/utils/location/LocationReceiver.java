@@ -1,20 +1,15 @@
-/*
- * Copyright (c) 2016. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package anartzmugika.utils.location;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
-/**
- * Created by anartzmugika on 5/12/16.
- */
+/***************************************************************************************************
+ * Created by anartzmugika on 2016/12/05. Update: 2017/01/09
+ * ---------------------------------------------------------
+ * Receiver to get current user location
+ ***************************************************************************************************/
 
 public class LocationReceiver extends BroadcastReceiver {
 
@@ -32,6 +27,7 @@ public class LocationReceiver extends BroadcastReceiver {
 
     public void sendDataToCurrentActivity(double lat, double lng, Context context)
     {
-        //if (context.getClass() == Main.class) ((MapsActivity)context).changeMarker(lat, lng, "My location");
+        //USE to extends and use this function and programming our requeriments
+        Toast.makeText(context, String.format("Location: %s - %s", lat, lng), Toast.LENGTH_LONG ).show();
     }
 }
