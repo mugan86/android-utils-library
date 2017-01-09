@@ -8,8 +8,8 @@ import android.preference.PreferenceManager;
 import java.util.Locale;
 
 /***********************************************************************************************
- * Created by Anartz Mugika (mugan86@gmail.com) on 2014/03/02.
- * -----------------------------------------------------------
+ * Created by Anartz Mugika (mugan86@gmail.com) on 2014/03/02. Update: 2017/01/09
+ * ----------------------------------------------------------------------------------------------
  * Class to manage select locale language info and manage preference data to app with one or more
  * values to use in correct app functionality
  ***********************************************************************************************/
