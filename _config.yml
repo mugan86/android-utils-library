@@ -1,0 +1,8 @@
+title: Android Utils Library
+description: Make Android Aplication Library to use in my projects
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
