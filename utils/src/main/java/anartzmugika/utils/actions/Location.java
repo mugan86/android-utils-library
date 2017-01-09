@@ -1,11 +1,3 @@
-/*
- * Copyright (c) 2016. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package anartzmugika.utils.actions;
 
 import android.content.Context;
@@ -16,9 +8,11 @@ import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
-/**
- * Created by anartzmugika on 5/12/16.
- */
+/***************************************************************************************************
+ * Created by anartzmugika on 2016/12/05. Updated by Anartz Mugika on 2017/01/09
+ * -------------------------------------------------------------------------------------------------
+ * Class to make actions with relation about GPS Provider location.
+ **************************************************************************************************/
 
 public class Location {
 
