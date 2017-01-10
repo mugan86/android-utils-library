@@ -14,6 +14,7 @@ import java.util.Random;
 import anartzmugika.utils.R;
 import anartzmugika.utils.actions.IntentsManage;
 import anartzmugika.utils.activities.WebViewActivity;
+import anartzmugika.utils.activities.WelcomeActivity;
 
 /***************************************************************************************************
  * Created by anartzmugika on 23/11/16.
@@ -24,7 +25,7 @@ import anartzmugika.utils.activities.WebViewActivity;
 public class MyView extends LinearLayout {
 
     private TextView titleTextView, descriptionTextView;
-    private Button changeButton, resetButton, show_servirace_main_pageButton;
+    private Button changeButton, resetButton, show_servirace_main_pageButton, welcomeButton;
     private Context context;
     private TouchImageView touchImageView;
     public MyView(Context context) {
@@ -55,6 +56,7 @@ public class MyView extends LinearLayout {
         changeButton = (Button) findViewById(R.id.changeButton);
         resetButton = (Button) findViewById(R.id.resetButton);
         show_servirace_main_pageButton = (Button) findViewById(R.id.show_servirace_main_pageButton);
+        welcomeButton = (Button) findViewById(R.id.welcomeButton);
         resetButton.setEnabled(false);
         touchImageView = (TouchImageView) findViewById(R.id.touchImageView);
 
@@ -84,6 +86,13 @@ public class MyView extends LinearLayout {
             @Override
             public void onClick(View view) {
                 IntentsManage.openWebViewIntent(context, WebViewActivity.class, "http://www.servirace.com");
+            }
+        });
+
+        welcomeButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentsManage.openIntent(context, WelcomeActivity.class);
             }
         });
     }
