@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,7 +15,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toolbar;
 
 import anartzmugika.utils.R;
 
@@ -60,6 +60,8 @@ public class WebViewActivity extends AppCompatActivity {
             loadURL(url);
 
             //toolbar = ToolbarManage.getTitleSubtitleABToolbar(WebViewActivity.this, (Toolbar) findViewById(R.id.toolbar), "Mendiak", url, true, "");
+
+            toolbar = (Toolbar) findViewById(R.id.toolbar);
         }
     }
 
@@ -71,7 +73,7 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         System.out.println("Load URL: " + url);
 
-        toolbar.setVisibility(View.VISIBLE);
+        if (toolbar!= null) toolbar.setVisibility(View.VISIBLE);
 
         myWebView.loadUrl(url);
         myWebView.setWebViewClient(new WebViewClient() {
