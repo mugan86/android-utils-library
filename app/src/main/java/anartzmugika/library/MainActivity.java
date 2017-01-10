@@ -1,5 +1,6 @@
 package anartzmugika.library;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent intent;
     private CurrentLocationReceiver broadcastReceiver;
     private boolean active;
+    private Context context;
     @Override
     public void onResume() {
         super.onResume();
@@ -37,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        this.context = MainActivity.this;
 
         MyView view = new MyView(this);
 
@@ -134,5 +139,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("locations", "Permission denied, check your app configuration please!!");
             }
         }
+    }
+
+    public Context getContextMainActivity()
+    {
+        return this.context;
     }
 }
