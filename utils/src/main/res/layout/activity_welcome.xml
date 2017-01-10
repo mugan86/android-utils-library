@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_background_gradient">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/loadDataLinearLayout"/>
+    <LinearLayout
+        android:id="@+id/loadDataLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/viewLine"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginBottom="15sp">
+        <ProgressBar
+            android:layout_marginTop="34dp"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="35dp"
+            android:layout_height="37dp"
+            android:id="@+id/progressBar"
+            android:indeterminateTint="@color/White"
+            android:layout_marginBottom="5sp"
+            />
+        <ProgressBar
+            android:layout_marginTop="10dp"
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="30sp"
+            android:paddingLeft="30sp"
+            />
+        <TextView
+            android:layout_marginTop="10sp"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:id="@+id/info_about_load_data"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Welcome message" />
+        <Button
+            android:layout_marginTop="10sp"
+
+            android:id="@+id/reloadButton"
+            style="@style/Buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="48sp"
+            android:text="Reload" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dots_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dots_margin_bottom"
+        android:gravity="center"
+        android:orientation="horizontal"></LinearLayout>
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha=".5"
+        android:layout_above="@id/layoutDots"
+        android:background="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="NEXT"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:text="SKIP"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
