@@ -35,7 +35,7 @@
         <activity
             android:name=".activities.WebViewActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
 
         <service
             android:name=".location.GPSNetworkTracker"
@@ -51,7 +51,7 @@
         </receiver>
         <receiver android:name=".location.LocationReceiver" />
 
-        <activity android:name=".activities.WelcomeActivity"></activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name=".activities.WelcomeActivity"/>
     </application>
 
 </manifest>
