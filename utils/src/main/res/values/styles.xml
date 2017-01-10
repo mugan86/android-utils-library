@@ -46,6 +46,59 @@
         <item name = "android:orientation">horizontal</item>
     </style>
 
+    <style name = "Buttons">
+        <item name = "android:padding">5sp</item>
+        <item name ="android:textColor">@color/White</item>
+        <item name= "android:layout_width">wrap_content</item>
+        <item name= "android:layout_height">wrap_content</item>
+        <item name= "android:background">@drawable/button_selector_general</item>
+        <item name= "android:layout_marginBottom">6sp</item>
+    </style>
+
+    <style name = "Buttons.AllWidth">
+        <item name= "android:textSize">22sp</item>
+        <item name= "android:layout_width">match_parent</item>
+        <item name= "android:layout_marginLeft">5sp</item>
+        <item name= "android:layout_marginRight">5sp</item>
+    </style>
+
+    <style name = "CancelButton" parent="Buttons">
+        <item name= "android:background">@drawable/button_selector_general_cancel</item>
+    </style>
+
+    <style name = "WelcomeTitle">
+        <item name = "android:paddingLeft">20sp</item>
+        <item name = "android:paddingRight">20sp</item>
+        <item name = "android:layout_marginTop">15sp</item>
+        <item name = "android:gravity">center</item>
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:textColor">@android:color/white</item>
+        <item name = "android:textSize">@dimen/slide_title</item>
+        <item name = "android:textStyle">bold</item>
+    </style>
+    <style name = "WelcomeTitleLine">
+        <item name = "android:layout_width">match_parent</item>
+        <item name = "android:layout_height">1sp</item>
+        <item name = "android:layout_marginLeft">26sp</item>
+        <item name = "android:layout_marginRight">26sp</item>
+        <item name = "android:layout_marginTop">26sp</item>
+        <item name = "android:background">@color/White</item>
+    </style>
+
+    <style name = "WelcomeDescriptions">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginTop">30sp</item>
+        <item name = "android:paddingLeft">@dimen/desc_padding</item>
+        <item name = "android:paddingRight">@dimen/desc_padding</item>
+        <item name = "android:gravity">center</item>
+        <item name = "android:textColor">@color/White</item>
+        <item name = "android:textSize">@dimen/slide_desc</item>
+        <item name = "android:textStyle">bold</item>
+    </style>
+
+
 
 
 </resources>
