@@ -10,6 +10,14 @@ public class Constants {
     //Photos
     public static final String DEFAULT_PHOTO_URL = "";
 
+    //Server (URL CONNECTION PROPERTIES
+
+    public static final String THIRTY_MINUTES_CACHE_AGE = "max-age=1800";
+    public static final String ONE_HOUR_CACHE_AGE = "max-age=3600";
+
+    public static final int READ_TIME_TIME_IN_MS = 20000;
+    public static final int CONNECT_TIME_TIME_IN_MS = 30000;
+
     //NETWORK STATUS
     public static final String MOMENT_CONNECTION = "MOMENT_CONNECTION";
     public static final String CONNECT_TO_WIFI = "WIFI";
