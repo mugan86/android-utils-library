@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
+/***************************************************************************************************
  * Created by anartzmugika on 4/8/16.
- */
+ **************************************************************************************************/
 
 public class IntroPageAdapter extends PagerAdapter {
     private LayoutInflater layoutInflater;
