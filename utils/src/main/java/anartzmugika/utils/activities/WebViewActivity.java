@@ -49,17 +49,12 @@ public class WebViewActivity extends AppCompatActivity {
         }
 
         myWebView = (WebView) findViewById(R.id.myWebView);
-        //loadDataLinearLayout = (LinearLayout) findViewById(R.id.loadDataLinearLayout);
-        //loadDataLinearLayout.setVisibility(View.VISIBLE);
-        //myWebView.setVisibility(View.GONE);
 
         if( savedInstanceState == null ) {
             String url =
                     getIntent().getStringExtra("url").replace("webview://", "http://");
             // do something with this URL.
             loadURL(url);
-
-            //toolbar = ToolbarManage.getTitleSubtitleABToolbar(WebViewActivity.this, (Toolbar) findViewById(R.id.toolbar), "Mendiak", url, true, "");
 
             toolbar = (Toolbar) findViewById(R.id.toolbar);
         }
