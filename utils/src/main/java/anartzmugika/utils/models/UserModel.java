@@ -6,11 +6,13 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import anartzmugika.utils.Constants;
 import anartzmugika.utils.R;
 
-/**********************************
- * Created by anartzmugika on 25/11/16.
- */
+/***************************************************************************************************
+ * Created by anartzmugika on 25/11/16. Updated by Anartz Mugika on 2017-01-11
+ * UserModel use Google account basic data, if extends and reuse functions, extends in new object ;)
+ **************************************************************************************************/
 
 public class UserModel {
 
@@ -52,7 +54,12 @@ public class UserModel {
         this.email = email;
     }
 
+    /*********
+     * Take default photo from constants
+     * @return Photo
+     */
     public String getPhoto_url() {
+        if (photo_url == null || photo_url.equals("")) return Constants.DEFAULT_PHOTO_URL;
         return photo_url;
     }
 
@@ -60,6 +67,14 @@ public class UserModel {
         this.photo_url = photo_url;
     }
 
+    /***********************************************************************************************
+     * Use in Activity with NavigationView and customheader
+     * @param ouser User object
+     * @param context Application Context
+     * @param profile_photo User profile photo url
+     * @param name User Name and Lastname
+     * @param email User email
+     ***********************************************************************************************/
     public static void setUserDataInMenuHeader(UserModel ouser, Context context, ImageView profile_photo,
                                                TextView name, TextView email)
     {
