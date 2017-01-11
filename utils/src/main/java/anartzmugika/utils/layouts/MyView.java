@@ -15,6 +15,7 @@ import anartzmugika.utils.R;
 import anartzmugika.utils.actions.IntentsManage;
 import anartzmugika.utils.activities.WebViewActivity;
 import anartzmugika.utils.activities.WelcomeActivity;
+import anartzmugika.utils.activities.maps.BasicMapsActivity;
 
 /***************************************************************************************************
  * Created by anartzmugika on 23/11/16. Update by Anartz on 2017-01-11
@@ -25,7 +26,7 @@ import anartzmugika.utils.activities.WelcomeActivity;
 public class MyView extends LinearLayout {
 
     private TextView titleTextView, descriptionTextView;
-    private Button changeButton, resetButton, show_servirace_main_pageButton, welcomeButton;
+    private Button changeButton, resetButton, show_servirace_main_pageButton, welcomeButton, mapsButton;
     private Context context;
     private TouchImageView touchImageView;
     public MyView(Context context) {
@@ -57,6 +58,7 @@ public class MyView extends LinearLayout {
         resetButton = (Button) findViewById(R.id.resetButton);
         show_servirace_main_pageButton = (Button) findViewById(R.id.show_servirace_main_pageButton);
         welcomeButton = (Button) findViewById(R.id.welcomeButton);
+        mapsButton = (Button) findViewById(R.id.mapsButton);
         resetButton.setEnabled(false);
         touchImageView = (TouchImageView) findViewById(R.id.touchImageView);
 
@@ -93,6 +95,13 @@ public class MyView extends LinearLayout {
             @Override
             public void onClick(View view) {
                 IntentsManage.openIntent(context, WelcomeActivity.class);
+            }
+        });
+
+        mapsButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentsManage.openIntent(context, BasicMapsActivity.class);
             }
         });
     }
