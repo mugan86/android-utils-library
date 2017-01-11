@@ -13,7 +13,6 @@ import anartzmugika.utils.models.MapModel;
 
 public class BasicMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class BasicMapsActivity extends FragmentActivity implements OnMapReadyCal
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        MapModel map = new MapModel(mMap, true, true);
+        MapModel map = new MapModel(googleMap, true, true);
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
