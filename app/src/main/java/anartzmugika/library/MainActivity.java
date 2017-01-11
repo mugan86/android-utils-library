@@ -98,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
             //enableLocationUpdates();
             startService(intent);
             locationGetStartStopToggleButton.setChecked(true);
-            Toast.makeText(MainActivity.this, "Find Locations...", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Start to Find Locations...", Toast.LENGTH_LONG).show();
         } else {
             stopService(intent);
             //disableLocationUpdates();
-            Toast.makeText(MainActivity.this, "Left find locations...", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Stop service...", Toast.LENGTH_LONG).show();
             locationGetStartStopToggleButton.setChecked(false);
         }
 
@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
         if (broadcastReceiver != null) {
             unregisterReceiver(broadcastReceiver);
         }
-        Toast.makeText(getApplicationContext(), "Stop service...", Toast.LENGTH_LONG).show();
         stopService(intent);
     }
 
