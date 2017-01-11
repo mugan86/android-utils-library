@@ -147,22 +147,6 @@ public class DateTime {
         return new int [] {hour_int,minute_int,0};
     }
 
-    //To create new DatePicker Dialog to select new data
-    /*public static DatePickerFragment getNewDate (DatePickerFragment date)
-    {
-        /**
-         * Set Up Current Date Into dialog
-         */
-        /*Calendar calender = Calendar.getInstance();
-        Bundle args = new Bundle();
-        args.putInt("year", calender.get(Calendar.YEAR));
-        args.putInt("month", calender.get(Calendar.MONTH));
-        args.putInt("day", calender.get(Calendar.DAY_OF_MONTH));
-
-        date.setArguments(args);
-        return date;
-    }*/
-
     public static String [] setFormatData (int year, int monthOfYear, int dayOfMonth)
     {
         //year/month/day
@@ -221,10 +205,6 @@ public class DateTime {
         SimpleDateFormat dateFormatter = new SimpleDateFormat(format_data); //this format changeable
         dateFormatter.setTimeZone(TimeZone.getDefault());
         System.out.println("SELECT DATA IN DEFAULT TIMEZONE: " + dateFormatter.format(value));
-
-
-
-
         return dateFormatter.format(value);
     }
 
@@ -281,7 +261,7 @@ public class DateTime {
                         if ((current_hour - hour > 1))
                         {
                             //Bi ordu gutxienez
-                            System.out.println("Bi ordu gutxienez: " + (current_hour) +  " / " + hour);
+                            System.out.println("Two hour or more: " + (current_hour) +  " / " + hour);
                             return true;
                         }
                         else
