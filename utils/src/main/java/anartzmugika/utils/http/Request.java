@@ -13,17 +13,16 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import anartzmugika.utils.Constants;
+
 /***************************************************************************************************
- * Created by Anartz on 06/10/2014. Updated by Anartz on 10/03/2016
+ * Created by Anartz on 2014-10-06. Updated by Anartz on 2017-01-11
  *------------------------------------------------------------------------------------------------
  * Class to make server request in POST and GET
  **************************************************************************************************/
 public class Request {
 
     private boolean https;
-
-    private static final int READ_TIME_TIME_IN_MS = 20000;
-    private static final int CONNECT_TIME_TIME_IN_MS = 30000;
     public void Request() {}
     public void Request(boolean https)
     {
@@ -48,10 +47,10 @@ public class Request {
 
         URL url = new URL(request_url);
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-        conn.setReadTimeout(READ_TIME_TIME_IN_MS);
-        conn.setConnectTimeout(CONNECT_TIME_TIME_IN_MS);
+        conn.setReadTimeout(Constants.READ_TIME_TIME_IN_MS);
+        conn.setConnectTimeout(Constants.CONNECT_TIME_TIME_IN_MS);
         conn.setUseCaches(true);
-        conn.addRequestProperty("Cache-Control", "max-age=1800");
+        conn.addRequestProperty("Cache-Control", Constants.THIRTY_MINUTES_CACHE_AGE);
         conn.setRequestMethod("POST");
 
         conn.setDoInput(true);
@@ -111,11 +110,11 @@ public class Request {
             // uncomment this if you want to write output to this url
             //connection.setDoOutput(true);
             connection.setUseCaches(true);
-            connection.addRequestProperty("Cache-Control", "max-age=1800");
+            connection.addRequestProperty("Cache-Control", Constants.THIRTY_MINUTES_CACHE_AGE);
 
-            connection.setConnectTimeout(READ_TIME_TIME_IN_MS);
+            connection.setConnectTimeout(Constants.READ_TIME_TIME_IN_MS);
             // give it 40 seconds to respond
-            connection.setReadTimeout(CONNECT_TIME_TIME_IN_MS);
+            connection.setReadTimeout(Constants.CONNECT_TIME_TIME_IN_MS);
             connection.connect();
 
             System.out.println("Response code: " + connection.getResponseCode());
