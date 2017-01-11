@@ -33,6 +33,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:text="Open Google Maps Activity"
+        android:id="@+id/mapsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
         android:text="Open Servirace"
         android:id="@+id/show_servirace_main_pageButton"
         android:layout_width="match_parent"
