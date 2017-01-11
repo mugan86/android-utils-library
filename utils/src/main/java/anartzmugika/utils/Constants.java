@@ -7,6 +7,9 @@ package anartzmugika.utils;
 
 public class Constants {
 
+    //Photos
+    public static final String DEFAULT_PHOTO_URL = "";
+
     //NETWORK STATUS
     public static final String MOMENT_CONNECTION = "MOMENT_CONNECTION";
     public static final String CONNECT_TO_WIFI = "WIFI";
