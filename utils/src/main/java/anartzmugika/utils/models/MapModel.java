@@ -21,7 +21,7 @@ public class MapModel{
         this.googleMap = googleMap;
         this.control_zoom = control_zoom;
         this.gestures = gestures;
-        setUiSettings(googleMap, control_zoom, gestures);
+        setUiSettings(control_zoom, gestures);
     }
 
     public GoogleMap getGoogleMap() {
@@ -49,9 +49,9 @@ public class MapModel{
     }
 
 
-    public void setUiSettings (GoogleMap map, boolean control_zoom, boolean gestures)
+    private void setUiSettings (boolean control_zoom, boolean gestures)
     {
-        UiSettings uiSettings = map.getUiSettings();
+        UiSettings uiSettings = getGoogleMap().getUiSettings();
         uiSettings.setCompassEnabled(false);
         //if (control_zoom)
         uiSettings.setZoomControlsEnabled(control_zoom);
