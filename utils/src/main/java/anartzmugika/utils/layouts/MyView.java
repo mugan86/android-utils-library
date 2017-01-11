@@ -17,7 +17,7 @@ import anartzmugika.utils.activities.WebViewActivity;
 import anartzmugika.utils.activities.WelcomeActivity;
 
 /***************************************************************************************************
- * Created by anartzmugika on 23/11/16.
+ * Created by anartzmugika on 23/11/16. Update by Anartz on 2017-01-11
  *
  * Example to manage 'MyView' from MainActivity
  **************************************************************************************************/
