@@ -32,12 +32,12 @@ public class Constants {
 
     //Data Preferences values
     //Default constants values
-    public static final String DEFAULT_PREFERENCES = "Default Preferences";
-    public static final String LANG_PROPERTY = "Language";
-    public static final String DEFAULT_LANG = "es";
+    static final String DEFAULT_PREFERENCES = "Default Preferences";
+    static final String LANG_PROPERTY = "Language";
+    static final String DEFAULT_LANG = "es";
 
     //Other data
-    public static final String EMPTY_VALUE = "";
+    static final String EMPTY_VALUE = "";
 
     //LOCATION
 
