@@ -16,6 +16,7 @@ import anartzmugika.utils.actions.IntentsManage;
 import anartzmugika.utils.activities.WebViewActivity;
 import anartzmugika.utils.activities.WelcomeActivity;
 import anartzmugika.utils.activities.maps.BasicMapsActivity;
+import anartzmugika.utils.activities.maps.ClusterMapsActivity;
 
 /***************************************************************************************************
  * Created by anartzmugika on 23/11/16. Update by Anartz on 2017-01-11
@@ -26,7 +27,7 @@ import anartzmugika.utils.activities.maps.BasicMapsActivity;
 public class MyView extends LinearLayout {
 
     private TextView titleTextView, descriptionTextView;
-    private Button changeButton, resetButton, show_servirace_main_pageButton, welcomeButton, mapsButton;
+    private Button changeButton, resetButton, show_servirace_main_pageButton, welcomeButton, mapsButton, maps_clusterButton;
     private Context context;
     private TouchImageView touchImageView;
     public MyView(Context context) {
@@ -61,6 +62,7 @@ public class MyView extends LinearLayout {
         mapsButton = (Button) findViewById(R.id.mapsButton);
         resetButton.setEnabled(false);
         touchImageView = (TouchImageView) findViewById(R.id.touchImageView);
+        maps_clusterButton = (Button) findViewById(R.id.maps_clusterButton);
 
         Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(touchImageView);
     }
@@ -102,6 +104,13 @@ public class MyView extends LinearLayout {
             @Override
             public void onClick(View view) {
                 IntentsManage.openIntent(context, BasicMapsActivity.class);
+            }
+        });
+
+        maps_clusterButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentsManage.openIntent(context, ClusterMapsActivity.class);
             }
         });
     }
