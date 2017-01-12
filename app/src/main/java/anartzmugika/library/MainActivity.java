@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         if (broadcastReceiver == null) {
             broadcastReceiver = new CurrentLocationReceiver();
         }
-        registerReceiver(broadcastReceiver, new IntentFilter("location_update"));
+        registerReceiver(broadcastReceiver, new IntentFilter(Constants.LOCATION_UPDATES_LABEL));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,14 +94,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (enable) {
-
-            //enableLocationUpdates();
             startService(intent);
             locationGetStartStopToggleButton.setChecked(true);
             Toast.makeText(MainActivity.this, "Start to Find Locations...", Toast.LENGTH_LONG).show();
         } else {
             stopService(intent);
-            //disableLocationUpdates();
             Toast.makeText(getApplicationContext(), "Stop service...", Toast.LENGTH_LONG).show();
             locationGetStartStopToggleButton.setChecked(false);
         }
