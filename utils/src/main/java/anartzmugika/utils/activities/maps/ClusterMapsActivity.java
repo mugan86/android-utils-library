@@ -15,6 +15,7 @@ import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import anartzmugika.utils.R;
 import anartzmugika.utils.activities.maps.cluster.PersonClusterRenderer;
@@ -28,6 +29,8 @@ public class ClusterMapsActivity extends FragmentActivity
         ClusterManager.OnClusterItemInfoWindowClickListener<PersonModel> {
 
     private ClusterManager<PersonModel> mClusterManager;
+    private ArrayList<PersonModel> person_list = new ArrayList<>();
+    private Random mRandom = new Random(1984);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class ClusterMapsActivity extends FragmentActivity
         MapModel map = new MapModel(googleMap, true, true);
         map.setMapType(1);
 
-        final ArrayList<PersonModel> person_list = new PersonModel().getItems();
+        addItems();
         //Cluster Manage with click actions in cluster and inside cluster markers :)
 
         LatLng center_location = map.getMapCenterPosition(1, person_list);
@@ -75,8 +78,10 @@ public class ClusterMapsActivity extends FragmentActivity
             location_mountain.setLatitude(person.getPosition().latitude);
             location_mountain.setLongitude(person.getPosition().longitude);
             float distance = center_point.distanceTo(location_mountain);
+            System.out.println(distance +  " to check....");
             if (distance > max_distance) {
                 max_distance = distance;
+                System.out.println(distance +  " new asign....");
             }
         }
 
@@ -136,5 +141,25 @@ public class ClusterMapsActivity extends FragmentActivity
     @Override
     public void onClusterItemInfoWindowClick(PersonModel personModel) {
 
+    }
+
+    public void addItems() {
+        person_list.add(new PersonModel(position(), "Walter", R.drawable.android, "http://static.panoramio.com/photos/original/101779498.jpg"));
+        person_list.add(new PersonModel(position(), "Gran", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/14449320.jpg"));
+        person_list.add(new PersonModel(position(), "Ruth", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/27049250.jpg"));
+        person_list.add(new PersonModel(position(), "Stefan", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/20450379.jpg"));
+        person_list.add(new PersonModel(position(), "Mechanic", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/8636065.jpg"));
+        person_list.add(new PersonModel(position(), "Yeats", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/8636188.jpg"));
+        person_list.add(new PersonModel(position(), "John", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/90076639.jpg"));
+        person_list.add(new PersonModel(position(), "Trevor the Turtle", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/89815173.jpg"));
+        person_list.add(new PersonModel(position(), "Teach", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/90080431.jpg"));
+    }
+
+    private LatLng position() {
+        return new LatLng(random(51.6723432, 51.38494009999999), random(0.148271, -0.3514683));
+    }
+
+    private double random(double min, double max) {
+        return mRandom.nextDouble() * (max - min) + min;
     }
 }
