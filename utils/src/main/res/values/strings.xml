@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Utils Library</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_cluster_maps">Map</string>
     <!--
     TODO: Before you run your application, you need a Google Maps API key.
     To get one, follow this link, follow the directions and press "Create" at the end:
@@ -15,4 +16,5 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyBDMOCm6nX5P1KiotGWinHvBN3sozVjhRQ
     </string>
+
 </resources>
