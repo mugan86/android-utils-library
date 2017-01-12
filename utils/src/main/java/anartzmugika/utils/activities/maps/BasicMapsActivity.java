@@ -13,7 +13,6 @@ import anartzmugika.utils.models.MapModel;
 
 public class BasicMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
