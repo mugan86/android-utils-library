@@ -40,6 +40,8 @@ public class ClusterMapsActivity extends FragmentActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        person_list = new ArrayList<>();
     }
 
 
@@ -58,7 +60,7 @@ public class ClusterMapsActivity extends FragmentActivity
         MapModel map = new MapModel(googleMap, true, true);
         map.setMapType(1);
 
-        addItems();
+        new PersonModel().addItems(person_list);
         //Cluster Manage with click actions in cluster and inside cluster markers :)
 
         LatLng center_location = map.getMapCenterPosition(1, person_list);
@@ -143,23 +145,4 @@ public class ClusterMapsActivity extends FragmentActivity
 
     }
 
-    public void addItems() {
-        person_list.add(new PersonModel(position(), "Walter", R.drawable.android, "http://static.panoramio.com/photos/original/101779498.jpg"));
-        person_list.add(new PersonModel(position(), "Gran", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/14449320.jpg"));
-        person_list.add(new PersonModel(position(), "Ruth", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/27049250.jpg"));
-        person_list.add(new PersonModel(position(), "Stefan", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/20450379.jpg"));
-        person_list.add(new PersonModel(position(), "Mechanic", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/8636065.jpg"));
-        person_list.add(new PersonModel(position(), "Yeats", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/8636188.jpg"));
-        person_list.add(new PersonModel(position(), "John", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/90076639.jpg"));
-        person_list.add(new PersonModel(position(), "Trevor the Turtle", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/89815173.jpg"));
-        person_list.add(new PersonModel(position(), "Teach", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/90080431.jpg"));
-    }
-
-    private LatLng position() {
-        return new LatLng(random(51.6723432, 51.38494009999999), random(0.148271, -0.3514683));
-    }
-
-    private double random(double min, double max) {
-        return mRandom.nextDouble() * (max - min) + min;
-    }
 }
