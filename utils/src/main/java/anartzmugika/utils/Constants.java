@@ -10,6 +10,8 @@ public class Constants {
     //Photos
     public static final String DEFAULT_PHOTO_URL = "";
 
+    public static final String LOCATION_UPDATES_LABEL = "location_update";
+
     //Server (URL CONNECTION PROPERTIES
 
     public static final String THIRTY_MINUTES_CACHE_AGE = "max-age=1800";
