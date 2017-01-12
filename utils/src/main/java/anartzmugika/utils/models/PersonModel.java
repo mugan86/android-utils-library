@@ -19,6 +19,7 @@ public class PersonModel implements ClusterItem, Parcelable {
     public int profilePhoto;
     private LatLng mPosition;
     private String photo_url;
+    private static Random mRandom;
 
     public PersonModel(LatLng position, String name, int pictureResource, String photo_url) {
         this.name = name;
@@ -86,4 +87,25 @@ public class PersonModel implements ClusterItem, Parcelable {
             return new PersonModel[size];
         }
     };
+
+    public void addItems(ArrayList<PersonModel> person_list) {
+        if (mRandom == null) mRandom = new Random(1984);
+        person_list.add(new PersonModel(position(), "Walter", R.drawable.android, "http://static.panoramio.com/photos/original/101779498.jpg"));
+        person_list.add(new PersonModel(position(), "Gran", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/14449320.jpg"));
+        person_list.add(new PersonModel(position(), "Ruth", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/27049250.jpg"));
+        person_list.add(new PersonModel(position(), "Stefan", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/20450379.jpg"));
+        person_list.add(new PersonModel(position(), "Mechanic", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/8636065.jpg"));
+        person_list.add(new PersonModel(position(), "Yeats", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/8636188.jpg"));
+        person_list.add(new PersonModel(position(), "John", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/90076639.jpg"));
+        person_list.add(new PersonModel(position(), "Trevor the Turtle", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/89815173.jpg"));
+        person_list.add(new PersonModel(position(), "Teach", R.drawable.android, "http://mw2.google.com/mw-panoramio/photos/medium/90080431.jpg"));
+    }
+
+    private LatLng position() {
+        return new LatLng(random(51.6723432, 51.38494009999999), random(0.148271, -0.3514683));
+    }
+
+    private double random(double min, double max) {
+        return mRandom.nextDouble() * (max - min) + min;
+    }
 }
