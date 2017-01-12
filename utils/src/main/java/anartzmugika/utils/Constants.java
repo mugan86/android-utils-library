@@ -32,14 +32,14 @@ public class Constants {
     public static int TYPE_MOBILE = 2;
     public static int TYPE_NOT_CONNECTED = 0;
 
-    //Data Preferences values
+    //PreferenceOptions Preferences values
     //Default constants values
-    static final String DEFAULT_PREFERENCES = "Default Preferences";
-    static final String LANG_PROPERTY = "Language";
-    static final String DEFAULT_LANG = "es";
+    public static final String DEFAULT_PREFERENCES = "Default Preferences";
+    public static final String LANG_PROPERTY = "Language";
+    public static final String DEFAULT_LANG = "es";
 
     //Other data
-    static final String EMPTY_VALUE = "";
+    public static final String EMPTY_VALUE = "";
 
     //LOCATION
 
