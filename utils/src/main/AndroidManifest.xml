@@ -55,7 +55,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.maps.BasicMapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".activities.maps.ClusterMapsActivity"
+            android:label="@string/title_activity_cluster_maps"></activity>
     </application>
 
 </manifest>
