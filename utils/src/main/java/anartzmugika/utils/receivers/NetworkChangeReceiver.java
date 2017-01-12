@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.util.Log;
 
 import anartzmugika.utils.Constants;
-import anartzmugika.utils.Data;
-import anartzmugika.utils.actions.NetworkUtil;
+import anartzmugika.utils.tools.PreferenceOptions;
+import anartzmugika.utils.tools.NetworkUtil;
 
 
 /***************************************************************************
@@ -38,8 +38,8 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
                 break;
         }
 
-        System.out.println("Last known connection (" + Data.getPreference(context, Constants.MOMENT_CONNECTION) + ") replace with "
+        System.out.println("Last known connection (" + PreferenceOptions.getPreferenceValue(context, Constants.MOMENT_CONNECTION) + ") replace with "
                 + status);
-        Data.setPreference(context, new String [] {Constants.MOMENT_CONNECTION},new String[]{status});
+        PreferenceOptions.setPreferenceValues(context, new String [] {Constants.MOMENT_CONNECTION},new String[]{status});
     }
 }

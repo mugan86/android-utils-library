@@ -1,4 +1,4 @@
-package anartzmugika.utils.actions;
+package anartzmugika.utils.tools;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

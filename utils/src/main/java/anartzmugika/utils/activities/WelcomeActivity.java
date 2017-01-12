@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -16,12 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.util.Locale;
-
-import anartzmugika.utils.Data;
-import anartzmugika.utils.actions.NetworkUtil;
-import anartzmugika.utils.adapter.IntroPageAdapter;
 import anartzmugika.utils.R;
+import anartzmugika.utils.adapter.IntroPageAdapter;
+import anartzmugika.utils.tools.NetworkUtil;
+import anartzmugika.utils.tools.PreferenceOptions;
 
 /***************
  * Created by anartzmugika on 8/9/16.
@@ -34,7 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext, reloadButton;
-    private Data prefManager;
+    private PreferenceOptions prefManager;
     private LinearLayout loadDataLinearLayout;
     private boolean load_all_mountains_and_insert_in_db;
 
@@ -52,17 +49,12 @@ public class WelcomeActivity extends AppCompatActivity {
         String connection = String.valueOf(NetworkUtil.getNetworkInfo(WelcomeActivity.this));
 
         /*************************************************************************
-         * Set basque language config by default to show maps in basque language
+         * Load select language (default spanish)
          ************************************************************************/
-
-        Locale myLocale = new Locale("eu");
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        PreferenceOptions.loadLocale(this);
 
         // Checking for first time launch - before calling setContentView()
-        prefManager = new Data(this);
+        prefManager = new PreferenceOptions(this);
 
         load_all_mountains_and_insert_in_db = false;
 

@@ -1,4 +1,4 @@
-package anartzmugika.utils;
+package anartzmugika.utils.tools;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,14 +7,16 @@ import android.preference.PreferenceManager;
 
 import java.util.Locale;
 
+import anartzmugika.utils.Constants;
+
 /***********************************************************************************************
- * Created by Anartz Mugika (mugan86@gmail.com) on 2014/03/02. Update: 2017/01/09
+ * Created by Anartz Mugika (mugan86@gmail.com) on 2014/03/02. Update: 2017/01/12
  * ----------------------------------------------------------------------------------------------
  * Class to manage select locale language info and manage preference data to app with one or more
  * values to use in correct app functionality
  ***********************************************************************************************/
 
-public class Data {
+public class PreferenceOptions {
 
     //Local (Language) data preference manage functions
 
@@ -26,13 +28,10 @@ public class Data {
     }
     public static void loadLocale(Context context)
     {
-        String langPref = Constants.LANG_PROPERTY;
-        SharedPreferences prefs = context.getSharedPreferences(Constants.DEFAULT_PREFERENCES, Activity.MODE_PRIVATE);
-        String language = prefs.getString(langPref, Constants.DEFAULT_LANG);
-        changeLang(language, context);
+        changeLang(getLocaleLanguage(context), context);
     }
 
-    public static void changeLang(String lang, Context context)
+    private static void changeLang(String lang, Context context)
     {
         if (lang.equalsIgnoreCase(Constants.EMPTY_VALUE))
             return;
@@ -55,16 +54,16 @@ public class Data {
 
     //General preference manage functions
 
-    public static SharedPreferences getPreferencesFile(Context context) {
+    private static SharedPreferences getPreferencesFile(Context context) {
         // This sample app persists the registration ID in shared preferences, but
         // how you store the regID in your app is up to you.
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
-    public static String getPreference(Context context, String propertyName){
+    public static String getPreferenceValue(Context context, String propertyName){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getString(propertyName, "");
     }
-    public static void setPreference(Context context, String [] propertyNames
+    public static void setPreferenceValues(Context context, String [] propertyNames
             , String [] propertyValues){
         SharedPreferences sharedPreferences = getPreferencesFile(context);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -77,9 +76,9 @@ public class Data {
         editor.commit();
     }
 
-    SharedPreferences pref;
-    SharedPreferences.Editor editor;
-    Context _context;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+    private Context _context;
 
     // shared pref mode
     int PRIVATE_MODE = 0;
@@ -89,7 +88,7 @@ public class Data {
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
 
-    public Data(Context context) {
+    public PreferenceOptions(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();

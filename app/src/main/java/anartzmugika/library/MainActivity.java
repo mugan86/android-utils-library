@@ -14,8 +14,8 @@ import android.widget.ToggleButton;
 
 import anartzmugika.utils.Constants;
 import anartzmugika.utils.actions.DateTime;
-import anartzmugika.utils.actions.Location;
-import anartzmugika.utils.actions.NetworkUtil;
+import anartzmugika.utils.tools.Location;
+import anartzmugika.utils.tools.NetworkUtil;
 import anartzmugika.utils.layouts.MyView;
 import anartzmugika.utils.location.GPSNetworkTracker;
 
