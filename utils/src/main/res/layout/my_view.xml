@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hello!"/>
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Hello!"/>
 
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="This is my custom view from my little library."/>
-    <Button
-        android:text="Change data..."
-        android:id="@+id/changeButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Reset Button"
-        android:id="@+id/resetButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Open Welcome Activity"
-        android:id="@+id/welcomeButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Open Google Maps Activity"
-        android:id="@+id/mapsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Open Servirace"
-        android:id="@+id/show_servirace_main_pageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <ToggleButton
-        android:text="Find Location"
-        android:id="@+id/locationGetStartStopToggleButton"
-        android:textOff="START GET LOCATION"
-        android:textOn="STOP GET LOCATION"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <anartzmugika.utils.layouts.TouchImageView
-        android:layout_marginTop="10sp"
-        android:id="@+id/touchImageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="This is my custom view from my little library."/>
+        <Button
+            android:text="Change data..."
+            android:id="@+id/changeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Reset Button"
+            android:id="@+id/resetButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Open Welcome Activity"
+            android:id="@+id/welcomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Open Google Maps Activity"
+            android:id="@+id/mapsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Open Google Maps (With cluster)"
+            android:id="@+id/maps_clusterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Open Servirace"
+            android:id="@+id/show_servirace_main_pageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:text="Find Location"
+            android:id="@+id/locationGetStartStopToggleButton"
+            android:textOff="START GET LOCATION"
+            android:textOn="STOP GET LOCATION"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <anartzmugika.utils.layouts.TouchImageView
+            android:layout_marginTop="10sp"
+            android:id="@+id/touchImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
+
