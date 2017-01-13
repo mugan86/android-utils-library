@@ -19,7 +19,7 @@ import anartzmugika.utils.activities.maps.BasicMapsActivity;
 import anartzmugika.utils.activities.maps.ClusterMapsActivity;
 
 /***************************************************************************************************
- * Created by anartzmugika on 23/11/16. Update by Anartz on 2017-01-11
+ * Created by anartzmugika on 23/11/16. Update by Anartz on 2017-01-13
  *
  * Example to manage 'MyView' from MainActivity
  **************************************************************************************************/
@@ -96,21 +96,21 @@ public class MyView extends LinearLayout {
         welcomeButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentsManage.openIntent(context, WelcomeActivity.class);
+                IntentsManage.openIntent(context, WelcomeActivity.class, false);
             }
         });
 
         mapsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentsManage.openIntent(context, BasicMapsActivity.class);
+                IntentsManage.openIntent(context, BasicMapsActivity.class, false);
             }
         });
 
         maps_clusterButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentsManage.openIntent(context, ClusterMapsActivity.class);
+                IntentsManage.openIntent(context, ClusterMapsActivity.class, false);
             }
         });
     }
