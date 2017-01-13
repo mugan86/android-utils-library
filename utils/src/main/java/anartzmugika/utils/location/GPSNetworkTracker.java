@@ -17,8 +17,10 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 
+import anartzmugika.utils.Constants;
+
 /***************************************************************************************************
- * Created by anartzmugika on 26/9/16.
+ * Created by anartzmugika on 26/9/16. Update by Anartz Mugika on 2017/01/13
  *
  * GPS Tracker service to stablished our current location.
  **************************************************************************************************/
@@ -115,9 +117,9 @@ public class GPSNetworkTracker extends Service implements GoogleApiClient.Connec
 
         //Set location request properties, interval 5seconds with high accuracy
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(5000);
-        mLocationRequest.setFastestInterval(2000);
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(Constants.DEFAULT_INTERVAL_IN_MS);
+        mLocationRequest.setFastestInterval(Constants.FASTEST_TIME_INTERVAL_IN_MS);
+        mLocationRequest.setPriority(Constants.PRIORITY_HIGH_ACCURACY);
     }
 
     private void startLocationUpdate() {
