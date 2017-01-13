@@ -15,7 +15,6 @@ import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import anartzmugika.utils.R;
 import anartzmugika.utils.activities.maps.cluster.PersonClusterRenderer;
@@ -30,7 +29,6 @@ public class ClusterMapsActivity extends FragmentActivity
 
     private ClusterManager<PersonModel> mClusterManager;
     private ArrayList<PersonModel> person_list = new ArrayList<>();
-    private Random mRandom = new Random(1984);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +68,11 @@ public class ClusterMapsActivity extends FragmentActivity
         center_point.setLongitude(center_location.longitude);
 
         float max_distance = 0;
-        int zoom = 15;
         for (PersonModel person : person_list) {
 
             System.out.println(person.getPosition());
-            //mountain_list.add(mountain);
-            Location location_mountain = new Location("race_location");
+
+            Location location_mountain = new Location("select_location");
 
             location_mountain.setLatitude(person.getPosition().latitude);
             location_mountain.setLongitude(person.getPosition().longitude);
