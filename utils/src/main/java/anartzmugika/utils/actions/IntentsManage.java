@@ -1,5 +1,6 @@
 package anartzmugika.utils.actions;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,16 +14,17 @@ public class IntentsManage {
     /*
     Open Intent Activity without pass bundle arguments
      */
-    public static void openIntent(Context from_, Class to_)
+    public static void openIntent(Context from_, Class to_, boolean finish)
     {
         Intent openIntent = new Intent(from_, to_);
         (from_).startActivity(openIntent);
+        if (finish) ((Activity)(from_)).finish();
     }
 
     /*
     Open Intent Activity with pass bundle arguments
      */
-    public static void openIntent(Context from_, Class to_, Bundle bundle)
+    public static void openIntent(Context from_, Class to_, Bundle bundle, boolean finish)
     {
         Intent openIntent = new Intent(from_, to_);
         openIntent.putExtras(bundle);
