@@ -1,5 +1,7 @@
 package anartzmugika.utils;
 
+import com.google.android.gms.location.LocationRequest;
+
 /***************************************************************************************************
  * Created by Anartz Mugika (mugan86@gmail.com) on 24/11/16.
  * Constants values to use in library
@@ -54,5 +56,10 @@ public class Constants {
     public static final String DATA_AND_TIME = "yyyy-MM-dd HH:mm:ss";
     public static final String ONLY_HOUR_WITH_SECONDS = "HH:mm:ss";
     public static final String ONLY_HOUR_WITHOUT_SECONDS = "HH:mm";
+
+    //GPS Tracker constants values
+    public static final int PRIORITY_HIGH_ACCURACY = LocationRequest.PRIORITY_HIGH_ACCURACY;
+    public static final int FASTEST_TIME_INTERVAL_IN_MS = 2000;
+    public static final int DEFAULT_INTERVAL_IN_MS = 5000;
 
 }
